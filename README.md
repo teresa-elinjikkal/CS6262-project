@@ -1,26 +1,35 @@
-# CS6262-project
+# CS6262 Project: Evaluating the Network Security Infrastructure of Public School Districts
 
 ## Security Measurements
 
-**Email Security**
-- SPF and DKIM
-- DMARC presence and enforcement policies
+### Email Security
+- SPF record presence and configuration
+- DKIM detection using common DNS selectors
+- DMARC presence and enforcement policies (`none`, `quarantine`, `reject`)
 - DMARC aggregate reporting (RUA)
-- Email providers (MX records)
-- MTA-STS and TLS-RPT
+- Email provider identification using MX records
+- MTA-STS and TLS-RPT record detection
 
-**DNS Security**
-- DNSSEC (DS/DNSKEY record detection)
+### DNS Security
+- DNSSEC detection through DS and DNSKEY records
 
-**Web Security**
-- HTTPS availability and TLS certificate validity
+### Web Security
+- HTTPS availability and TLS certificate verification
 - HTTP-to-HTTPS redirects
-- Security headers: HSTS, CSP, X-Frame-Options, X-Content-Type-Options, Referrer-Policy, and Permissions-Policy
-- Cookie attributes: Secure, HttpOnly, and SameSite
+- Security headers:
+  - Strict-Transport-Security (HSTS)
+  - Content-Security-Policy (CSP)
+  - X-Frame-Options
+  - X-Content-Type-Options
+  - Referrer-Policy
+  - Permissions-Policy
+- Cookie security attributes:
+  - Secure
+  - HttpOnly
+  - SameSite
 
-## Dataset
-
-The cleaned analysis dataset contains:
-- **13,251 school district rows**
-- District demographic, financial, and enrollment information
-- Email, DNS, and web security measurements
+### Third-Party Infrastructure
+- Email provider identification through MX records
+- CDN and reverse-proxy provider detection using DNS CNAME records and HTTP response headers
+- TLS certificate authority identification
+- TLS certificate issuer and expiration information
